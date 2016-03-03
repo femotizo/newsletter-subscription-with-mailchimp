@@ -14,7 +14,18 @@
             <div class="col-md-4 col-md-offset-4">
                 <h1 class="text-center">Subscribe to our newsletter!</h1>
 
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{ url('subscribe') }}" method="POST">
+                    {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" placeholder="Email" name="email">
