@@ -27,4 +27,7 @@ Route::group(['middleware' => ['web']], function () {
         return view('welcome');
     });
     Route::post('subscribe', 'NewsletterController@subscribe');
+    Route::get('thankyou', function() {
+        return view('thankyou');
+    });
 });

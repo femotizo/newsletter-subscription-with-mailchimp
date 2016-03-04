@@ -37,6 +37,8 @@ class NewsletterController extends Controller
             }
         }
 
+        return redirect('/thankyou');
+
     }
 
     /**
